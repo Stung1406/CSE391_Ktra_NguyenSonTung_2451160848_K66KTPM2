@@ -1,0 +1,114 @@
+body {
+  background: #f3f4f6;
+}
+
+.btn-add {
+  background: #7c3aed;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-add:hover {
+  background: #6d28d9;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+.high {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.medium {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.low {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.form-check-input {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #e0e7ff;
+  color: #4338ca;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-edit:hover {
+  background: #c7d2fe;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+.task-card {
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.task-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10) !important;
+  transform: translateY(-2px);
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 32px;
+  width: 100%;
+  max-width: 440px;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
