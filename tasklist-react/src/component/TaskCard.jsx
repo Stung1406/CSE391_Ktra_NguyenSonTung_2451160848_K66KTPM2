@@ -4,7 +4,7 @@ function TaskCard({ task, onEdit, onDelete }) {
   
   if (task.status === 'Done') {
     progress = 100;
-  } else if (task.status === 'In Progress' || task.status === 'INPROGRESS') {
+  } else if (task.status === 'In Progress') {
     progress = 50;
     color = '#7c3aed';
   }
