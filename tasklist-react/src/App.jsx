@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import TaskCard from './component/TaskCard'
 import TaskModal from './component/TaskModal'
-import { initialTasks } from './component/data.json'
+import { task } from './component/data.json'
 
 
 function App() {
-  const [tasks, setTasks] = useState(initialTasks)
+  const [tasks, setTasks] = useState(() => task.map(t => ({ ...t, done: t.status === 'Done' })))
   const [modal, setModal] = useState(null)
   const [nextId, setNextId] = useState(4)
 

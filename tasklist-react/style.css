@@ -177,3 +177,31 @@ body {
 .invalid-input {
     border-color: #ff6b6b !important;
 }
+
+.progress-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: conic-gradient(var(--progress-color, #7c3aed) var(--progress), #e5e7eb 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #374151;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.progress-text {
+    position: relative;
+    z-index: 1;
+}
