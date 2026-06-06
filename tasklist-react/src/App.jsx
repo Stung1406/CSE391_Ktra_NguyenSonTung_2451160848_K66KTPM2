@@ -22,15 +22,6 @@ function App() {
     setTasks(prev => prev.filter(t => t.id !== id))
   }
 
-  function handleToggleDone(id) {
-    setTasks(prev =>
-      prev.map(t =>
-        t.id === id
-          ? { ...t, done: !t.done, status: !t.done ? 'Done' : 'To Do' }
-          : t
-      )
-    )
-  }
 
   function handleSave(data) {
     if (modal.type === 'add') {
