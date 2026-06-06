@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PRIORITIES } from './data.json'
+import { PRIORITIES } from '../constants/taskConstants'
 
 function TaskModal({ task, onClose, onSave }) {
   const [name, setName] = useState(task ? task.name : '')
@@ -7,10 +7,16 @@ function TaskModal({ task, onClose, onSave }) {
   const [status] = useState(task ? task.status : 'To Do')
   const [error, setError] = useState('')
 
+  const MAX_NAME_LENGTH = 100
+
   function handleSubmit(e) {
     e.preventDefault()
     if (!name.trim()) {
       setError('Vui lòng nhập tên task')
+      return
+    }
+    if (name.length > MAX_NAME_LENGTH) {
+      setError(`Tên task không được vượt quá ${MAX_NAME_LENGTH} ký tự`)
       return
     }
     onSave({ name: name.trim(), priority, status })
@@ -32,15 +38,24 @@ function TaskModal({ task, onClose, onSave }) {
               placeholder="Type your task here..."
               value={name}
               onChange={e => {
-                setName(e.target.value)
-                if (e.target.value.trim()) {
+                const val = e.target.value
+                setName(val)
+                if (val.trim().length > MAX_NAME_LENGTH) {
+                  setError(`Tên task không được vượt quá ${MAX_NAME_LENGTH} ký tự`)
+                } else if (val.trim()) {
                   setError('')
                 }
               }}
               className={error ? 'invalid-input' : ''}
+              maxLength={MAX_NAME_LENGTH + 10}
               autoFocus
             />
-            {error && <span className="error-text">{error}</span>}
+            <div className="input-feedback">
+              {error && <span className="error-text">{error}</span>}
+              <span className={`char-count ${name.length > MAX_NAME_LENGTH ? 'over-limit' : ''}`}>
+                {name.length}/{MAX_NAME_LENGTH}
+              </span>
+            </div>
           </div>
 
           <div className="form-group">

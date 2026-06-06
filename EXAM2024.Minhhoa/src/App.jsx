@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import TaskCard from './component/TaskCard'
-import TaskModal from './component/TaskModal'
-import { task } from './component/data.json'
+import TaskCard from './components/TaskCard'
+import TaskModal from './components/TaskModal'
+import { task } from './data/data.json'
 
 
 function App() {
