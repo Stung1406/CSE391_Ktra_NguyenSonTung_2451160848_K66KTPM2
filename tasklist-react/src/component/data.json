@@ -3,7 +3,7 @@
   "STATUSES": ["To Do", "In Progress", "Done"],
   "initialTasks": [
     { "id": 1, "name": "Go to gym", "priority": "High", "status": "To Do", "done": false },
-    { "id": 2, "name": "Read a book", "priority": "Low", "status": "Done", "done": true },
-    { "id": 3, "name": "Go to market", "priority": "Medium", "status": "INPROGRESS", "done": true }
+    { "id": 2, "name": "Read a book", "priority": "Low", "status": "Done", "done": false },
+    { "id": 3, "name": "Go to market", "priority": "Medium", "status": "INPROGRESS", "done": false }
   ]
 }
